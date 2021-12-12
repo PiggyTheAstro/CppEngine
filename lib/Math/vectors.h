@@ -35,6 +35,6 @@ namespace Vectors
 		void Normalize();
 		float Dot(Vector2 secondVec);
 		Vector2 Reflect(Vector2 secondVec);
-		void Rotate(float eulerAngle);
+		Vector2 Rotate(float eulerAngle);
 	};
 }

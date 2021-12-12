@@ -1,6 +1,6 @@
 #include <cmath>
 #include "vectors.h"
-#define PI 3.14159265358979323846
+#define PI 3.14159265358979323846f
 
 namespace Vectors
 {
@@ -138,13 +138,11 @@ namespace Vectors
 		return Vector2(factor * secondVec.x + this->x, factor * secondVec.y + this->y);
 	}
 
-	void Vector2::Rotate(float eulerAngle)
+	Vector2 Vector2::Rotate(float eulerAngle)
 	{
 		float angle = eulerAngle * PI / 180.0f;
 		float sine = sin(angle);
 		float cosine = cos(angle);
-		float newX = this->x * cosine - this->y * sine;
-		float newY = this->x * sine + this->y * cosine;
-		*this = Vector2(newX, newY);
+		return Vector2(cosine * this->x - sine * this->y, sine * this->x + cosine * this->y);
 	}
 }

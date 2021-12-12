@@ -18,7 +18,7 @@ void PlayerMovement::Start(Transform* parent)
 
 void PlayerMovement::Update()
 {
-	transform->position += transform->Down() * speed * clock->GetDeltaTime();
+	transform->position += transform->Up() * speed * clock->GetDeltaTime();
 	int rawInput = inputManager->GetKey(SDLK_d) - inputManager->GetKey(SDLK_a);
 	transform->rotation += rawInput * speed * clock->GetDeltaTime();
 }

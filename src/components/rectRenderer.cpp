@@ -2,13 +2,6 @@
 #include <iostream>
 #include <core/serviceHandler.h>
 
-RectRenderer::RectRenderer()
-{
-	transform = nullptr;
-	rect = SDL_FRect();
-	renderModule = nullptr;
-}
-
 void RectRenderer::Start(Transform* parent)
 {
 	transform = parent;

@@ -6,13 +6,12 @@
 class RectRenderer : public Component
 {
 public:
-	RectRenderer();
 	void Start(Transform* parent) override;
 	void Update() override;
 	SDL_FRect* Rect();
 
 private:
-	Transform* transform;
-	SDL_FRect rect;
-	RenderSystem* renderModule;
+	Transform* transform = nullptr;
+	SDL_FRect rect = SDL_FRect();
+	RenderSystem* renderModule = nullptr;
 };
