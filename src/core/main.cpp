@@ -6,7 +6,6 @@
 int main(int argc, char** argv)
 {
 	Game game = Game();
-	Clock* clock = ServiceHandler::instance->GetModule<Clock>();
 	Entity* player = ServiceHandler::instance->GetModule<EntitySystem>()->CreateEntity();
 	player->AddComponent<RectRenderer>();
 	player->AddComponent<PlayerMovement>();

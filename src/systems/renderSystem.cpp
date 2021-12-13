@@ -4,7 +4,7 @@
 RenderSystem::RenderSystem()
 {
 	renderables = std::vector<SDL_FRect*>();
-	renderer = SDL_CreateRenderer(SDL_GetWindowFromID(1), 0, SDL_RENDERER_PRESENTVSYNC);
+	renderer = SDL_CreateRenderer(SDL_GetWindowFromID(1), 0, SDL_RENDERER_PRESENTVSYNC); // SDL Window IDs start at 1
 }
 
 RenderSystem::RenderSystem(SDL_Renderer* mainRenderer)
@@ -13,7 +13,7 @@ RenderSystem::RenderSystem(SDL_Renderer* mainRenderer)
 	renderer = mainRenderer;
 }
 
-void RenderSystem::Render()
+void RenderSystem::Render() // Add sprite rendering support
 {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
 	SDL_RenderClear(renderer);

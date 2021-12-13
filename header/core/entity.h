@@ -7,19 +7,19 @@
 class Entity 
 {
 public:
-	Transform transform;
+	Transform transform = Transform(ID);
 
-	void Start();
-	void Update();
+	void Start(unsigned int identifier); // Entities take in an ID in their start functions, hence why all entity creation must be done through EntitySystem's interface
+	void Update(); // Update runs every frame
 
 	template <typename Comp>
 	void AddComponent()
 	{
 		Comp* comp = new Comp();
-		if (dynamic_cast<Component*>(comp) != nullptr) 
+		if (dynamic_cast<Component*>(comp) != nullptr) // If a non-component type is passed in, the addition gets cancelled and the heap memory freed
 		{
 			components.push_back(comp);
-			comp->Start(&transform);
+			comp->Start(&transform); // Transform date is passed to all components
 		}
 		else
 		{
@@ -28,7 +28,7 @@ public:
 	}
 
 	template <typename Comp>
-	Comp* GetComponent()
+	Comp* GetComponent() // Gets a component of the template type
 	{
 		for (int i = 0; i < components.size(); i++)
 		{
@@ -38,11 +38,11 @@ public:
 				return component;
 			}
 		}
-		return nullptr;
+		return nullptr; // Returns null if no component has been found
 	}
 
 	template <typename Comp>
-	void RemoveComponent()
+	void RemoveComponent() // TODO: Fix the memory leak that happens here. Components get erased but the memory doesn't get freed.
 	{
 		for (int i = 0; i < components.size(); i++) 
 		{
@@ -54,5 +54,6 @@ public:
 	}
 
 private:
-	std::vector<Component*> components;
+	std::vector<Component*> components = std::vector<Component*>();
+	unsigned int ID = 0;
 };

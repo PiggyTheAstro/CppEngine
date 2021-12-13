@@ -10,7 +10,7 @@ void RectRenderer::Start(Transform* parent)
 	renderModule->AddRenderable(&(this->rect));
 }
 
-void RectRenderer::Update()
+void RectRenderer::Update() // Updates the rect coordinates to the transform's
 {
 	rect.x = transform->position.x;
 	rect.y = transform->position.y;

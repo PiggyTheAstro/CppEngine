@@ -2,7 +2,7 @@
 #include <core/subsystem.h>
 #include <SDL.h>
 
-class RenderSystem : public SubSystem
+class RenderSystem : public SubSystem // TODO: Add sprite rendering support
 {
 public:
 	RenderSystem();

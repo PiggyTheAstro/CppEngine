@@ -6,13 +6,12 @@
 class PlayerMovement : public Component
 {
 public:
-	PlayerMovement();
 	void Start(Transform* parent) override;
 	void Update() override;
 
 private:
-	Transform* transform;
-	InputHandler* inputManager;
-	Clock* clock;
-	float speed;
+	Transform* transform = nullptr;
+	InputHandler* inputManager = nullptr;
+	Clock* clock = nullptr;
+	float speed = 100.0f;
 };

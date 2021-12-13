@@ -9,7 +9,7 @@ void InputHandler::CheckEvent()
 	{
 		switch (eventHandler.type)
 		{
-		case SDL_QUIT:
+		case SDL_QUIT: // TODO: Make an isRunning variable and change that to false instead of shutting down
 			SDL_Quit();
 			break;
 

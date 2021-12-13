@@ -138,7 +138,7 @@ namespace Vectors
 		return Vector2(factor * secondVec.x + this->x, factor * secondVec.y + this->y);
 	}
 
-	Vector2 Vector2::Rotate(float eulerAngle)
+	Vector2 Vector2::Rotate(float eulerAngle) // Rotates a vector's direction by the euler angle passed in
 	{
 		float angle = eulerAngle * PI / 180.0f;
 		float sine = sin(angle);

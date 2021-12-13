@@ -1,14 +1,6 @@
 #include <components/playerMovement.h>
 #include <core/serviceHandler.h>
 
-PlayerMovement::PlayerMovement()
-{
-	transform = nullptr;
-	clock = nullptr;
-	inputManager = nullptr;
-	speed = 100.0f;
-}
-
 void PlayerMovement::Start(Transform* parent)
 {
 	transform = parent;

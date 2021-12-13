@@ -1,6 +1,6 @@
 #pragma once
 #include <core/transform.h>
-class Component
+class Component // Important note: Component is an abstract class, all custom components have to inherit from it
 {
 public:
 	virtual void Start(Transform* parent) = 0;

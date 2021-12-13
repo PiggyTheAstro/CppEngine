@@ -18,7 +18,7 @@ private:
 	std::vector<SubSystem*> systems;
 	SDL_Window* window;
 	SDL_Event eventHandler;
-	InputHandler* inputManager;
+	InputHandler* inputManager; // TODO: There is no need to have a variable for each system, they can simply implement a shared interface
 	EntitySystem* entityManager;
 	RenderSystem* renderManager;
 	Clock* clock;

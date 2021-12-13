@@ -2,7 +2,6 @@
 #include <core/component.h>
 #include <SDL.h>
 #include <systems/renderSystem.h>
-
 class RectRenderer : public Component
 {
 public:

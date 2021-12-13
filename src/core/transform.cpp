@@ -1,10 +1,11 @@
 #include <core/transform.h>
 
-Transform::Transform()
+Transform::Transform(unsigned int identifier)
 {
 	position = Vectors::Vector2(0.0f, 0.0f);
 	rotation = 0.0f;
 	scale = Vectors::Vector2(1.0f, 1.0f);
+	ID = identifier;
 }
 
 Vectors::Vector2 Transform::Up()
