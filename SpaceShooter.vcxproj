@@ -161,6 +161,7 @@
   <ItemGroup>
     <ClCompile Include="lib\Math\vectors.cpp" />
     <ClCompile Include="src\components\playerMovement.cpp" />
+    <ClCompile Include="src\components\spriteRenderer.cpp" />
     <ClCompile Include="src\core\entity.cpp" />
     <ClCompile Include="src\core\renderable.cpp" />
     <ClCompile Include="src\core\transform.cpp" />
@@ -177,7 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\components\playerMovement.h" />
+    <ClInclude Include="header\components\spriteRenderer.h" />
     <ClInclude Include="header\core\renderable.h" />
+    <ClInclude Include="header\core\sprite.h" />
     <ClInclude Include="header\core\transform.h" />
     <ClInclude Include="header\core\component.h" />
     <ClInclude Include="header\core\entity.h" />

@@ -1,8 +1,9 @@
 #pragma once
 #include <core/component.h>
-#include <SDL.h>
 #include <systems/renderSystem.h>
-class RectRenderer : public Component
+#include <core/sprite.h>
+#include <systems/assetManager.h>
+class SpriteRenderer : public Component
 {
 public:
 	void Start(Transform* parent) override;
@@ -10,6 +11,7 @@ public:
 
 private:
 	Transform* transform = nullptr;
-	SDL_Rect rect = SDL_Rect();
+	Sprite* sprite = nullptr;
 	RenderSystem* renderModule = nullptr;
+	AssetManager* assetModule = nullptr;
 };

@@ -1,5 +1,5 @@
 #include <systems/assetManager.h>
-#include <iostream>
+
 SDL_Texture* AssetManager::LoadTexture(std::string path)
 {
 	for (int i = 0; i < tempTextures.size(); i++)
@@ -14,13 +14,7 @@ SDL_Texture* AssetManager::LoadTexture(std::string path)
 	SDL_Texture* tex = SDL_CreateTextureFromSurface(SDL_GetRenderer(SDL_GetWindowFromID(1)), img);
 	SDL_FreeSurface(img);
 	tempTextures.push_back(new Renderable(tex, path));
-	std::cout << tex << std::endl;
 	return tex;
-}
-
-SDL_Texture* AssetManager::LoadTexturePermanent(std::string path)
-{
-	return nullptr;
 }
 
 void AssetManager::Dereference(SDL_Texture* texture)
