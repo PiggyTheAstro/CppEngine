@@ -8,7 +8,7 @@ public:
 	Entity* CreateEntity();
 	Entity* GetEntity(unsigned int ID);
 	void UpdateEntities();
-	void DestroyEntity();
+	void DestroyEntity(unsigned int ID);
 private:
 	std::vector<Entity*> entityList;
 	unsigned int nextID = 1;

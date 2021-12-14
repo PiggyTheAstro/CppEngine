@@ -17,3 +17,13 @@ void Entity::Update()
 		components[i]->Update();
 	}
 }
+
+void Entity::OnDestroy()
+{
+	for (int i = components.size() - 1; i > -1; i--) // Deletes and frees memory for all components
+	{
+		Component* component = components[i];
+		components.erase(components.begin() + i);
+		delete component;
+	}
+}

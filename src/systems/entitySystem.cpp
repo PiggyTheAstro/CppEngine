@@ -30,7 +30,13 @@ void EntitySystem::UpdateEntities()
 	}
 }
 
-void EntitySystem::DestroyEntity() // TODO: This
+void EntitySystem::DestroyEntity(unsigned int ID)
 {
+	Entity* ent = GetEntity(ID);
 
+	if (ent != nullptr)
+	{
+		ent->OnDestroy();
+		delete ent;
+	}
 }

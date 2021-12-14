@@ -11,6 +11,7 @@ Game::Game()
 	entityManager = serviceManager->AddModule<EntitySystem>();
 	renderManager = serviceManager->AddModule<RenderSystem>();
 	clock = serviceManager->AddModule<Clock>();
+	assetManager = serviceManager->AddModule<AssetManager>();
 }
 
 void Game::Update() // All these functions could be turned into an update interface for each subsystem

@@ -11,7 +11,7 @@ public:
 
 	void Start(unsigned int identifier); // Entities take in an ID in their start functions, hence why all entity creation must be done through EntitySystem's interface
 	void Update(); // Update runs every frame
-
+	void OnDestroy();
 	template <typename Comp>
 	void AddComponent()
 	{
@@ -42,13 +42,15 @@ public:
 	}
 
 	template <typename Comp>
-	void RemoveComponent() // TODO: Fix the memory leak that happens here. Components get erased but the memory doesn't get freed.
+	void RemoveComponent()
 	{
 		for (int i = 0; i < components.size(); i++) 
 		{
-			if (dynamic_cast<Comp*>(components[i]) != nullptr)
+			Comp* component = dynamic_cast<Comp*>(components[i]);
+			if (component != nullptr)
 			{
 				components.erase(components.begin() + i);
+				delete component;
 			}
 		}
 	}

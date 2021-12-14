@@ -162,7 +162,9 @@
     <ClCompile Include="lib\Math\vectors.cpp" />
     <ClCompile Include="src\components\playerMovement.cpp" />
     <ClCompile Include="src\core\entity.cpp" />
+    <ClCompile Include="src\core\renderable.cpp" />
     <ClCompile Include="src\core\transform.cpp" />
+    <ClCompile Include="src\systems\assetManager.cpp" />
     <ClCompile Include="src\systems\clock.cpp" />
     <ClCompile Include="src\systems\entitySystem.cpp" />
     <ClCompile Include="src\core\game.cpp" />
@@ -175,10 +177,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\components\playerMovement.h" />
+    <ClInclude Include="header\core\renderable.h" />
     <ClInclude Include="header\core\transform.h" />
     <ClInclude Include="header\core\component.h" />
     <ClInclude Include="header\core\entity.h" />
     <ClInclude Include="header\core\game.h" />
+    <ClInclude Include="header\systems\assetManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="header\systems\clock.h" />
     <ClInclude Include="header\systems\inputHandler.h" />
     <ClInclude Include="header\components\rectRenderer.h" />
