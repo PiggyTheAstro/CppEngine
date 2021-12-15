@@ -5,18 +5,20 @@
 #include <iostream>
 #include <systems/assetManager.h>
 #include <components/spriteRenderer.h>
+using Vectors::Vector2;
 int main(int argc, char** argv)
 {
 	Game game = Game();
-	Entity* player = ServiceHandler::instance->GetModule<EntitySystem>()->CreateEntity();
+	EntitySystem* entitySystem = ServiceHandler::instance->GetModule<EntitySystem>();
+	Entity* player = entitySystem->CreateEntity();
 	player->AddComponent<SpriteRenderer>();
 	player->AddComponent<PlayerMovement>();
-	player->transform.position = Vectors::Vector2(400.0f, 300.0f);
-	player->transform.scale = Vectors::Vector2(20.0f, 20.0f);
-	Entity* playerT = ServiceHandler::instance->GetModule<EntitySystem>()->CreateEntity();
+	player->transform.position = Vector2(400.0f, 300.0f);
+	player->transform.scale = Vector2(20.0f, 20.0f);
+	Entity* playerT = entitySystem->CreateEntity();
 	playerT->AddComponent<RectRenderer>();
-	playerT->transform.position = Vectors::Vector2(200.0f, 300.0f);
-	playerT->transform.scale = Vectors::Vector2(20.0f, 20.0f);
+	playerT->transform.position = Vector2(200.0f, 300.0f);
+	playerT->transform.scale = Vector2(20.0f, 20.0f);
 	while (true)
 	{
 		game.Update();

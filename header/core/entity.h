@@ -8,14 +8,13 @@ class Entity
 {
 public:
 	Transform transform = Transform(ID);
-
+	~Entity();
 	void Start(unsigned int identifier); // Entities take in an ID in their start functions, hence why all entity creation must be done through EntitySystem's interface
 	void Update(); // Update runs every frame
-	void OnDestroy();
 	template <typename Comp>
 	void AddComponent()
 	{
-		Comp* comp = new Comp();
+		Comp* comp = new Comp(); // Handled
 		if (dynamic_cast<Component*>(comp) != nullptr) // If a non-component type is passed in, the addition gets cancelled and the heap memory freed
 		{
 			components.push_back(comp);

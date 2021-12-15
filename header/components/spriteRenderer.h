@@ -8,7 +8,7 @@ class SpriteRenderer : public Component
 public:
 	void Start(Transform* parent) override;
 	void Update() override;
-
+	~SpriteRenderer() override;
 private:
 	Transform* transform = nullptr;
 	Sprite* sprite = nullptr;

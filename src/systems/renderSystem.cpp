@@ -3,7 +3,7 @@
 #include <core/serviceHandler.h>
 RenderSystem::RenderSystem()
 {
-	renderables = std::vector<SDL_Rect*>();
+	rects = std::vector<SDL_Rect*>();
 	sprites = std::vector<Sprite*>();
 	renderer = SDL_CreateRenderer(SDL_GetWindowFromID(1), 0, SDL_RENDERER_PRESENTVSYNC); // SDL Window IDs start at 1
 }
@@ -20,7 +20,7 @@ void RenderSystem::Render() // Add sprite rendering support
 
 void RenderSystem::AddRenderable(SDL_Rect* rect)
 {
-	renderables.push_back(rect);
+	rects.push_back(rect);
 }
 
 void RenderSystem::AddRenderable(Sprite* sprite)
@@ -28,11 +28,22 @@ void RenderSystem::AddRenderable(Sprite* sprite)
 	sprites.push_back(sprite);
 }
 
+void RenderSystem::RemoveRenderable(Sprite* sprite)
+{
+	for (int i = 0; i < sprites.size(); i++)
+	{
+		if (sprites[i] = sprite)
+		{
+			sprites.erase(sprites.begin() + i);
+		}
+	}
+}
+
 void RenderSystem::RenderRects()
 {
-	for (int i = 0; i < renderables.size(); i++)
+	for (int i = 0; i < rects.size(); i++)
 	{
-		SDL_RenderFillRect(renderer, renderables[i]);
+		SDL_RenderFillRect(renderer, rects[i]);
 	}
 }
 
@@ -40,6 +51,6 @@ void RenderSystem::RenderSprites()
 {
 	for (int i = 0; i < sprites.size(); i++)
 	{
-		SDL_RenderCopy(renderer, sprites[i]->texture, 0, &sprites[i]->rect);
+		SDL_RenderCopyEx(renderer, sprites[i]->texture, 0, &sprites[i]->rect, sprites[i]->rotation, 0, SDL_FLIP_NONE);
 	}
 }

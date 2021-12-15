@@ -4,7 +4,7 @@
 #include <ranges>
 Entity* EntitySystem::CreateEntity()
 {
-	Entity* ent = new Entity;
+	Entity* ent = new Entity; // Handled
 	entityList.push_back(ent);
 	ent->Start(nextID);
 	nextID += 1; // ID for the next entity spawned starts at 1 and increments by 1 each time
@@ -36,7 +36,6 @@ void EntitySystem::DestroyEntity(unsigned int ID)
 
 	if (ent != nullptr)
 	{
-		ent->OnDestroy();
 		delete ent;
 	}
 }

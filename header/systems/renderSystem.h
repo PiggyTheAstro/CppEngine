@@ -10,11 +10,12 @@ public:
 	void Render();
 	void AddRenderable(SDL_Rect* rect);
 	void AddRenderable(Sprite* sprite);
+	void RemoveRenderable(Sprite* sprite);
 private:
 	void RenderRects();
 	void RenderSprites();
 	SDL_Renderer* renderer;
-	std::vector<SDL_Rect*> renderables;
+	std::vector<SDL_Rect*> rects;
 	std::vector<Sprite*> sprites;
 
 };
