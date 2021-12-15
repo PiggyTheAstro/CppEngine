@@ -13,6 +13,7 @@ class Game
 public:
 	Game();
 	void Update();
+	void Cleanup();
 	ServiceHandler* serviceManager;
 
 private:

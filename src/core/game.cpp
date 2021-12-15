@@ -1,6 +1,5 @@
 #include <core/game.h>
 #include <components/rectRenderer.h>
-#include <iostream>
 
 Game::Game()
 {
@@ -20,4 +19,13 @@ void Game::Update() // All these functions could be turned into an update interf
 	inputManager->CheckEvent();
 	entityManager->UpdateEntities();
 	renderManager->Render();
+}
+
+void Game::Cleanup() // Temporary
+{
+	delete inputManager;
+	delete entityManager;
+	delete renderManager;
+	delete clock;
+	delete assetManager;
 }

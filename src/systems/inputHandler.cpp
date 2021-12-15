@@ -1,6 +1,6 @@
 #include <systems/inputHandler.h>
 #include <SDL.h>
-#include <iostream>
+#include <core/serviceHandler.h>
 
 void InputHandler::CheckEvent()
 {
@@ -9,8 +9,8 @@ void InputHandler::CheckEvent()
 	{
 		switch (eventHandler.type)
 		{
-		case SDL_QUIT: // TODO: Make an isRunning variable and change that to false instead of shutting down
-			SDL_Quit();
+		case SDL_QUIT:
+			ServiceHandler::instance->isRunning = false;
 			break;
 
 		case SDL_KEYDOWN:

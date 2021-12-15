@@ -19,9 +19,11 @@ int main(int argc, char** argv)
 	playerT->AddComponent<RectRenderer>();
 	playerT->transform.position = Vector2(200.0f, 300.0f);
 	playerT->transform.scale = Vector2(20.0f, 20.0f);
-	while (true)
+	while (ServiceHandler::instance->isRunning)
 	{
 		game.Update();
 	}
+	game.Cleanup();
+	SDL_Quit();
 	return 0;
 }

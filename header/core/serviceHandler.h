@@ -6,6 +6,7 @@ class ServiceHandler
 {
 public:
 	static ServiceHandler* instance; // A singleton is unavoidable here unless I want to pass the service handler to every single class
+	bool isRunning;
 	ServiceHandler();
 
 	template <typename System>
