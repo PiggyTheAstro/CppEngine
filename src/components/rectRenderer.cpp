@@ -6,7 +6,7 @@ void RectRenderer::Start(Transform* parent)
 	transform = parent;
 	rect = SDL_Rect();
 	renderModule = ServiceHandler::instance->GetModule<RenderSystem>();
-	renderModule->AddRenderable(&(this->rect));
+	renderModule->AddRenderable(&rect);
 }
 
 void RectRenderer::Update() // Updates the rect coordinates to the transform's

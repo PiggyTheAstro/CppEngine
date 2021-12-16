@@ -4,21 +4,21 @@
 
 void InputHandler::CheckEvent()
 {
-	SDL_Event eventHandler = SDL_Event();
-	while (SDL_PollEvent(&eventHandler))
+	SDL_Event eventData = SDL_Event();
+	while (SDL_PollEvent(&eventData))
 	{
-		switch (eventHandler.type)
+		switch (eventData.type)
 		{
 		case SDL_QUIT:
 			ServiceHandler::instance->isRunning = false;
 			break;
 
 		case SDL_KEYDOWN:
-			PushEvent(eventHandler.key.keysym.sym);
+			PushEvent(eventData.key.keysym.sym);
 			break;
 
 		case SDL_KEYUP:
-			PopEvent(eventHandler.key.keysym.sym);
+			PopEvent(eventData.key.keysym.sym);
 			break;
 		}
 	}

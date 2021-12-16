@@ -2,15 +2,17 @@
 
 SDL_Texture* AssetManager::LoadTexture(std::string path)
 {
-	for (int i = 0; i < tempTextures.size(); i++)
+	for (Renderable* renderable : tempTextures)
 	{
-		if (tempTextures[i]->path == path) 
+		if (renderable->path == path)
 		{
-			tempTextures[i]->refCount += 1;
-			return tempTextures[i]->texture;
+			renderable->refCount += 1;
+			return renderable->texture;
 		}
 	}
 	SDL_Surface* img = SDL_LoadBMP(path.c_str());
+	int colorKey = SDL_MapRGB(img->format, 0, 0, 0);
+	SDL_SetColorKey(img, SDL_TRUE, colorKey);
 	SDL_Texture* tex = SDL_CreateTextureFromSurface(SDL_GetRenderer(SDL_GetWindowFromID(1)), img);
 	SDL_FreeSurface(img);
 	tempTextures.push_back(new Renderable(tex, path));

@@ -8,7 +8,7 @@ RenderSystem::RenderSystem()
 	renderer = SDL_CreateRenderer(SDL_GetWindowFromID(1), 0, SDL_RENDERER_PRESENTVSYNC); // SDL Window IDs start at 1
 }
 
-void RenderSystem::Render() // Add sprite rendering support
+void RenderSystem::Render()
 {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
 	SDL_RenderClear(renderer);
@@ -32,7 +32,7 @@ void RenderSystem::RemoveRenderable(Sprite* sprite)
 {
 	for (int i = 0; i < sprites.size(); i++)
 	{
-		if (sprites[i] = sprite)
+		if (sprites[i] == sprite)
 		{
 			sprites.erase(sprites.begin() + i);
 		}

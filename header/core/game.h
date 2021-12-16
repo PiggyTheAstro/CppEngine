@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 #include <SDL.h>
 #include <systems/inputHandler.h>
 #include <systems/entitySystem.h>
@@ -17,9 +16,7 @@ public:
 	ServiceHandler* serviceManager;
 
 private:
-	std::vector<SubSystem*> systems;
 	SDL_Window* window;
-	SDL_Event eventHandler;
 	InputHandler* inputManager; // TODO: There is no need to have a variable for each system, they can simply implement a shared interface
 	EntitySystem* entityManager;
 	RenderSystem* renderManager;
