@@ -8,13 +8,16 @@ void SpriteRenderer::Start(Transform* parent)
 	transform = parent;
 	renderModule = ServiceHandler::instance->GetModule<RenderSystem>();
 	assetModule = ServiceHandler::instance->GetModule<AssetManager>();
-	sprite = new Sprite(); // Handled
-	sprite->texture = assetModule->LoadTexture("resources/ship.bmp"); // Hardcoded, to be replaced soon
+	sprite = new Sprite();
 	sprite->rect = SDL_Rect();
 	sprite->rotation = transform->rotation;
 	renderModule->AddRenderable(sprite);
 }
 
+void SpriteRenderer::SetSprite(std::string path)
+{
+	sprite->texture = assetModule->LoadTexture(path);
+}
 void SpriteRenderer::Update()
 {
 	sprite->rotation = transform->rotation;

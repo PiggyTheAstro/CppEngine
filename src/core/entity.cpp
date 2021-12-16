@@ -6,7 +6,6 @@ Entity::~Entity()
 	{
 		Component* component = components[i];
 		components.erase(components.begin() + i);
-		std::cout << component << std::endl;
 		delete component;
 	}
 }

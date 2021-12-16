@@ -7,6 +7,7 @@ class SpriteRenderer : public Component
 {
 public:
 	void Start(Transform* parent) override;
+	void SetSprite(std::string path);
 	void Update() override;
 	~SpriteRenderer() override;
 private:

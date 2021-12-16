@@ -12,6 +12,7 @@ int main(int argc, char** argv)
 	EntitySystem* entitySystem = ServiceHandler::instance->GetModule<EntitySystem>();
 	Entity* player = entitySystem->CreateEntity();
 	player->AddComponent<SpriteRenderer>();
+	player->GetComponent<SpriteRenderer>()->SetSprite("resources/ship.bmp");
 	player->AddComponent<PlayerMovement>();
 	player->transform.position = Vector2(400.0f, 300.0f);
 	player->transform.scale = Vector2(32.0f, 32.0f);
