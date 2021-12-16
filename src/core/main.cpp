@@ -5,7 +5,7 @@
 #include <iostream>
 #include <systems/assetManager.h>
 #include <components/spriteRenderer.h>
-using Vectors::Vector2;
+using namespace Vectors;
 int main(int argc, char** argv)
 {
 	Game game = Game();
@@ -13,11 +13,13 @@ int main(int argc, char** argv)
 	Entity* player = entitySystem->CreateEntity();
 	player->AddComponent<SpriteRenderer>();
 	player->GetComponent<SpriteRenderer>()->SetSprite("resources/ship.bmp");
+	player->AddComponent<Rigidbody>();
 	player->AddComponent<PlayerMovement>();
 	player->transform.position = Vector2(400.0f, 300.0f);
 	player->transform.scale = Vector2(32.0f, 32.0f);
 	Entity* playerT = entitySystem->CreateEntity();
 	playerT->AddComponent<RectRenderer>();
+	playerT->AddComponent<Rigidbody>();
 	playerT->transform.position = Vector2(200.0f, 300.0f);
 	playerT->transform.scale = Vector2(20.0f, 20.0f);
 	while (ServiceHandler::instance->isRunning)
