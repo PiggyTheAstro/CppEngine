@@ -33,9 +33,9 @@ void EntitySystem::UpdateEntities()
 void EntitySystem::DestroyEntity(unsigned int ID)
 {
 	Entity* ent = GetEntity(ID);
-
 	if (ent != nullptr)
 	{
+		entityList.erase(std::find(entityList.begin(), entityList.end(), ent));
 		delete ent;
 	}
 }
