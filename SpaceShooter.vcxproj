@@ -164,7 +164,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lib\Math\vectors.cpp" />
+    <ClCompile Include="src\components\bulletMovement.cpp" />
     <ClCompile Include="src\components\playerMovement.cpp" />
+    <ClCompile Include="src\components\playerShooting.cpp" />
     <ClCompile Include="src\components\rigidbody.cpp" />
     <ClCompile Include="src\components\spriteRenderer.cpp" />
     <ClCompile Include="src\core\component.cpp" />
@@ -183,7 +185,12 @@
     <ClCompile Include="src\core\subsystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="header\components\bulletMovement.h" />
     <ClInclude Include="header\components\playerMovement.h" />
+    <ClInclude Include="header\components\playerShooting.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="header\components\rigidbody.h" />
     <ClInclude Include="header\components\spriteRenderer.h" />
     <ClInclude Include="header\core\renderable.h" />

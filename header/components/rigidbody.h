@@ -12,7 +12,7 @@ public:
 private:
 	Clock* clock;
 	float mass = 100.0f;
-	float friction = 0.5f;
+	float friction = 0.25f;
 	Vectors::Vector2 velocity;
 	Transform* transform = nullptr;
 };

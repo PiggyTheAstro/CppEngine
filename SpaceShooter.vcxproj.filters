@@ -69,6 +69,12 @@
     <ClCompile Include="src\components\rigidbody.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\components\playerShooting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\bulletMovement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\core\game.h">
@@ -123,6 +129,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="header\components\rigidbody.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\components\playerShooting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\components\bulletMovement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

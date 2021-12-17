@@ -5,7 +5,9 @@
 #include <iostream>
 #include <systems/assetManager.h>
 #include <components/spriteRenderer.h>
+#include <components/playerShooting.h>
 using namespace Vectors;
+
 int main(int argc, char** argv)
 {
 	Game game = Game();
@@ -15,6 +17,7 @@ int main(int argc, char** argv)
 	player->GetComponent<SpriteRenderer>()->SetSprite("resources/ship.bmp");
 	player->AddComponent<Rigidbody>();
 	player->AddComponent<PlayerMovement>();
+	player->AddComponent<PlayerShooting>();
 	player->transform.position = Vector2(400.0f, 300.0f);
 	player->transform.scale = Vector2(32.0f, 32.0f);
 	Entity* playerT = entitySystem->CreateEntity();
