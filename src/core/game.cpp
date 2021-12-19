@@ -10,12 +10,14 @@ Game::Game()
 	renderManager = serviceManager->AddModule<RenderSystem>();
 	clock = serviceManager->AddModule<Clock>();
 	assetManager = serviceManager->AddModule<AssetManager>();
+	colDetection = serviceManager->AddModule<CollisionSystem>();
 }
 
 void Game::Update() // All these functions could be turned into an update interface for each subsystem
 {
 	clock->Tick();
 	inputManager->CheckEvent();
+	colDetection->CheckCollisions();
 	entityManager->UpdateEntities();
 	renderManager->Render();
 }
@@ -27,4 +29,5 @@ void Game::Cleanup() // Temporary
 	delete renderManager;
 	delete clock;
 	delete assetManager;
+	delete colDetection;
 }

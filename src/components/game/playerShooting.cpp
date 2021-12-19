@@ -1,8 +1,8 @@
-#include <components/playerShooting.h>
+#include <components/game/playerShooting.h>
 #include <core/serviceHandler.h>
 #include <iostream>
 #include <components/rectRenderer.h>
-#include <components/bulletMovement.h>
+#include <components/game/bulletMovement.h>
 
 void PlayerShooting::Start(Transform* parent)
 {

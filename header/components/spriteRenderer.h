@@ -3,6 +3,7 @@
 #include <systems/renderSystem.h>
 #include <core/sprite.h>
 #include <systems/assetManager.h>
+
 class SpriteRenderer : public Component
 {
 public:

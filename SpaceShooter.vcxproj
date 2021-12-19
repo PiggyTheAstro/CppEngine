@@ -163,10 +163,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="lib\Math\collisionDetection.cpp" />
     <ClCompile Include="lib\Math\vectors.cpp" />
-    <ClCompile Include="src\components\bulletMovement.cpp" />
-    <ClCompile Include="src\components\playerMovement.cpp" />
-    <ClCompile Include="src\components\playerShooting.cpp" />
+    <ClCompile Include="src\components\game\bulletMovement.cpp" />
+    <ClCompile Include="src\components\game\playerMovement.cpp" />
+    <ClCompile Include="src\components\game\playerShooting.cpp" />
+    <ClCompile Include="src\components\rectCollider.cpp" />
     <ClCompile Include="src\components\rigidbody.cpp" />
     <ClCompile Include="src\components\spriteRenderer.cpp" />
     <ClCompile Include="src\core\component.cpp" />
@@ -175,6 +177,7 @@
     <ClCompile Include="src\core\transform.cpp" />
     <ClCompile Include="src\systems\assetManager.cpp" />
     <ClCompile Include="src\systems\clock.cpp" />
+    <ClCompile Include="src\systems\collisionSystem.cpp" />
     <ClCompile Include="src\systems\entitySystem.cpp" />
     <ClCompile Include="src\core\game.cpp" />
     <ClCompile Include="src\systems\inputHandler.cpp" />
@@ -185,12 +188,13 @@
     <ClCompile Include="src\core\subsystem.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header\components\bulletMovement.h" />
-    <ClInclude Include="header\components\playerMovement.h" />
-    <ClInclude Include="header\components\playerShooting.h">
+    <ClInclude Include="header\components\game\bulletMovement.h" />
+    <ClInclude Include="header\components\game\playerMovement.h" />
+    <ClInclude Include="header\components\game\playerShooting.h">
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="header\components\rectCollider.h" />
     <ClInclude Include="header\components\rigidbody.h" />
     <ClInclude Include="header\components\spriteRenderer.h" />
     <ClInclude Include="header\core\renderable.h" />
@@ -204,12 +208,14 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="header\systems\clock.h" />
+    <ClInclude Include="header\systems\collisionSystem.h" />
     <ClInclude Include="header\systems\inputHandler.h" />
     <ClInclude Include="header\components\rectRenderer.h" />
     <ClInclude Include="header\systems\entitySystem.h" />
     <ClInclude Include="header\systems\renderSystem.h" />
     <ClInclude Include="header\core\serviceHandler.h" />
     <ClInclude Include="header\core\subsystem.h" />
+    <ClInclude Include="lib\Math\collisionDetection.h" />
     <ClInclude Include="lib\Math\vectors.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

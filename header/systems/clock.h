@@ -8,6 +8,7 @@ public:
 	Clock();
 	void Tick();
 	float GetDeltaTime();
+
 private:
 	unsigned int deltaTime;
 	unsigned int lastTime;

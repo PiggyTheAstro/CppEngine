@@ -5,6 +5,7 @@
 #include <systems/renderSystem.h>
 #include <systems/clock.h>
 #include <systems/assetManager.h>
+#include <systems/collisionSystem.h>
 #include <core/serviceHandler.h>
 
 class Game
@@ -22,4 +23,5 @@ private:
 	RenderSystem* renderManager;
 	Clock* clock;
 	AssetManager* assetManager;
+	CollisionSystem* colDetection;
 };

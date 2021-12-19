@@ -1,4 +1,4 @@
-#include <components/playerMovement.h>
+#include <components/game/playerMovement.h>
 #include <core/serviceHandler.h>
 #include <systems/entitySystem.h>
 

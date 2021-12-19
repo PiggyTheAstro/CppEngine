@@ -1,7 +1,6 @@
-#include <components/bulletMovement.h>
+#include <components/game/bulletMovement.h>
 #include <core/serviceHandler.h>
 #include <systems/entitySystem.h>
-#include <iostream>
 
 void BulletMovement::Start(Transform* parent)
 {

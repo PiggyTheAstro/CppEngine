@@ -51,7 +51,7 @@
     <ClCompile Include="src\core\transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\components\playerMovement.cpp">
+    <ClCompile Include="src\components\game\playerMovement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\systems\assetManager.cpp">
@@ -69,10 +69,19 @@
     <ClCompile Include="src\components\rigidbody.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\components\playerShooting.cpp">
+    <ClCompile Include="src\components\game\playerShooting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\components\bulletMovement.cpp">
+    <ClCompile Include="src\components\game\bulletMovement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\Math\collisionDetection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\rectCollider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\collisionSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -113,7 +122,7 @@
     <ClInclude Include="header\core\transform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\components\playerMovement.h">
+    <ClInclude Include="header\components\game\playerMovement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="header\core\renderable.h">
@@ -131,10 +140,19 @@
     <ClInclude Include="header\components\rigidbody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\components\playerShooting.h">
+    <ClInclude Include="header\components\game\playerShooting.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\components\bulletMovement.h">
+    <ClInclude Include="header\components\game\bulletMovement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\Math\collisionDetection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\components\rectCollider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\systems\collisionSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
