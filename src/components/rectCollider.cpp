@@ -1,6 +1,5 @@
 #include <components/rectCollider.h>
 #include <core/serviceHandler.h>
-#include <iostream>
 #include <systems/collisionSystem.h>
 
 void RectCollider::Start(Transform* parent)
@@ -18,9 +17,16 @@ void RectCollider::Update()
 	rect.h = transform->scale.y;
 }
 
-void RectCollider::AddListener(Component* comp)
+void RectCollider::AddListener(std::function<void()> enterFunc, std::function<void()> exitFunc)
 {
-
+	if (enterFunc != nullptr)
+	{
+		enterListeners.push_back(enterFunc);
+	}
+	if (exitFunc != nullptr)
+	{
+		exitListeners.push_back(exitFunc);
+	}
 }
 
 void RectCollider::OnCollisionEnter(Transform* other)
@@ -32,8 +38,11 @@ void RectCollider::OnCollisionEnter(Transform* other)
 			return;
 		}
 	}
-	std::cout << "h" << std::endl;
 	collided.push_back(other->ID);
+	for (std::function<void()> func : enterListeners)
+	{
+		func();
+	}
 }
 
 void RectCollider::OnCollisionExit(Transform* other)
@@ -42,8 +51,11 @@ void RectCollider::OnCollisionExit(Transform* other)
 	{
 		if (other->ID == collided[i])
 		{
-			std::cout << "o" << std::endl;
 			collided.erase(collided.begin() + i);
+			for (std::function<void()> func : exitListeners)
+			{
+				func();
+			}
 		}
 	}
 }

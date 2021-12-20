@@ -9,7 +9,6 @@ class PlayerMovement : public Component
 public:
 	void Start(Transform* parent) override;
 	void Update() override;
-
 private:
 	Transform* transform = nullptr;
 	InputHandler* inputManager = nullptr;

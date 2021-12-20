@@ -16,9 +16,9 @@ int main(int argc, char** argv)
 	player->AddComponent<SpriteRenderer>();
 	player->GetComponent<SpriteRenderer>()->SetSprite("resources/ship.bmp");
 	player->AddComponent<Rigidbody>();
+	player->AddComponent<RectCollider>();
 	player->AddComponent<PlayerMovement>();
 	player->AddComponent<PlayerShooting>();
-	player->AddComponent<RectCollider>();
 	player->transform.position = Vector2(400.0f, 300.0f);
 	player->transform.scale = Vector2(32.0f, 32.0f);
 	Entity* playerT = entitySystem->CreateEntity();
