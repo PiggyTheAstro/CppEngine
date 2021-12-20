@@ -22,6 +22,11 @@ Entity* EntitySystem::GetEntity(unsigned int ID)
 	return nullptr;
 }
 
+std::vector<Entity*>* EntitySystem::GetAllEntities()
+{
+	return &entityList;
+}
+
 void EntitySystem::UpdateEntities()
 {
 	for (int i = 0; i < entityList.size(); i++)

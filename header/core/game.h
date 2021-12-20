@@ -6,6 +6,7 @@
 #include <systems/clock.h>
 #include <systems/assetManager.h>
 #include <systems/collisionSystem.h>
+#include <systems/camera.h>
 #include <core/serviceHandler.h>
 
 class Game
@@ -24,4 +25,5 @@ private:
 	Clock* clock;
 	AssetManager* assetManager;
 	CollisionSystem* colDetection;
+	Camera* mainCam;
 };

@@ -11,6 +11,7 @@ void Rigidbody::Update()
 {
 	transform->position += velocity;
 	velocity -= velocity * friction * clock->GetDeltaTime();
+	velocity.ClampMagnitude(maxSpeed);
 }
 
 void Rigidbody::AddForce(Vectors::Vector2 vector)

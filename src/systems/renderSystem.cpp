@@ -1,11 +1,13 @@
 #include <systems/renderSystem.h>
 #include <SDL.h>
 #include <core/serviceHandler.h>
+
 RenderSystem::RenderSystem()
 {
 	rects = std::vector<SDL_Rect*>();
 	sprites = std::vector<Sprite*>();
 	renderer = SDL_CreateRenderer(SDL_GetWindowFromID(1), 0, SDL_RENDERER_PRESENTVSYNC); // SDL Window IDs start at 1
+	cam = ServiceHandler::instance->GetModule<Camera>();
 }
 
 void RenderSystem::Render()
@@ -43,7 +45,10 @@ void RenderSystem::RenderRects()
 {
 	for (int i = 0; i < rects.size(); i++)
 	{
-		SDL_RenderFillRect(renderer, rects[i]);
+		SDL_Rect renderedRect = *rects[i];
+		renderedRect.x -= cam->position.x;
+		renderedRect.y -= cam->position.y;
+		SDL_RenderFillRect(renderer, &renderedRect);
 	}
 }
 
@@ -51,6 +56,9 @@ void RenderSystem::RenderSprites()
 {
 	for (int i = 0; i < sprites.size(); i++)
 	{
-		SDL_RenderCopyEx(renderer, sprites[i]->texture, 0, &sprites[i]->rect, sprites[i]->rotation, 0, SDL_FLIP_NONE);
+		SDL_Rect renderedRect = sprites[i]->rect;
+		renderedRect.x -= cam->position.x;
+		renderedRect.y -= cam->position.y;
+		SDL_RenderCopyEx(renderer, sprites[i]->texture, 0, &renderedRect, sprites[i]->rotation, 0, SDL_FLIP_NONE);
 	}
 }

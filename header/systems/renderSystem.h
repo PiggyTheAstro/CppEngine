@@ -2,6 +2,7 @@
 #include <core/subsystem.h>
 #include <core/sprite.h>
 #include <SDL.h>
+#include <systems/camera.h>
 
 class RenderSystem : public SubSystem // TODO: Add sprite rendering support
 {
@@ -14,6 +15,7 @@ public:
 private:
 	void RenderRects();
 	void RenderSprites();
+	Camera* cam;
 	SDL_Renderer* renderer;
 	std::vector<SDL_Rect*> rects;
 	std::vector<Sprite*> sprites;

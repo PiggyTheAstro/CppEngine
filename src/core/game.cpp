@@ -7,6 +7,7 @@ Game::Game()
 	serviceManager = new ServiceHandler();
 	inputManager = serviceManager->AddModule<InputHandler>();
 	entityManager = serviceManager->AddModule<EntitySystem>();
+	mainCam = serviceManager->AddModule<Camera>();
 	renderManager = serviceManager->AddModule<RenderSystem>();
 	clock = serviceManager->AddModule<Clock>();
 	assetManager = serviceManager->AddModule<AssetManager>();
@@ -30,4 +31,5 @@ void Game::Cleanup() // Temporary
 	delete clock;
 	delete assetManager;
 	delete colDetection;
+	delete mainCam;
 }

@@ -3,6 +3,7 @@
 #include <systems/inputHandler.h>
 #include <systems/clock.h>
 #include <components/rigidbody.h>
+#include <systems/camera.h>
 
 class PlayerMovement : public Component
 {
@@ -14,5 +15,6 @@ private:
 	InputHandler* inputManager = nullptr;
 	Clock* clock = nullptr;
 	Rigidbody* rb = nullptr;
+	Camera* cam = nullptr;
 	float speed = 200.0f;
 };

@@ -9,10 +9,11 @@ public:
 	void Start(Transform* parent) override;
 	void Update() override;
 	void AddForce(Vectors::Vector2 vector);
+	Vectors::Vector2 velocity;
 private:
 	Clock* clock;
 	float mass = 100.0f;
+	float maxSpeed = 7.0f;
 	float friction = 0.25f;
-	Vectors::Vector2 velocity;
 	Transform* transform = nullptr;
 };

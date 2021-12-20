@@ -33,8 +33,10 @@ namespace Vectors
 		float Distance(Vector2 secondVec);
 		float Magnitude();
 		void Normalize();
+		void ClampMagnitude(float magnitude);
 		float Dot(Vector2 secondVec);
 		Vector2 Reflect(Vector2 secondVec);
 		Vector2 Rotate(float eulerAngle);
+		Vector2 Round();
 	};
 }

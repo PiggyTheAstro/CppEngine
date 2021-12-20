@@ -145,4 +145,18 @@ namespace Vectors
 		float cosine = cos(angle);
 		return Vector2(cosine * this->x - sine * this->y, sine * this->x + cosine * this->y);
 	}
+
+	Vector2 Vector2::Round()
+	{
+		return Vector2(round(this->x), round(this->y));
+	}
+
+	void Vector2::ClampMagnitude(float magnitude)
+	{
+		if (Magnitude() > magnitude)
+		{
+			Normalize();
+			*this *= magnitude;
+		}
+	}
 }

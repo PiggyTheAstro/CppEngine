@@ -155,5 +155,8 @@
     <ClInclude Include="header\systems\collisionSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="header\systems\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

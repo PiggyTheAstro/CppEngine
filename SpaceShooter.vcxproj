@@ -207,6 +207,7 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="header\systems\camera.h" />
     <ClInclude Include="header\systems\clock.h" />
     <ClInclude Include="header\systems\collisionSystem.h" />
     <ClInclude Include="header\systems\inputHandler.h" />
