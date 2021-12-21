@@ -40,6 +40,7 @@ void PlayerShooting::Shoot()
 	bullet->transform.scale = Vectors::Vector2(8.0f, 8.0f);
 	bullet->AddComponent<RectRenderer>();
 	bullet->AddComponent<BulletMovement>();
+	bullet->GetComponent<BulletMovement>()->speed += entSys->GetEntity(transform->ID)->GetComponent<Rigidbody>()->velocity.Magnitude() / 0.02f;;
 	canShoot = false;
 	cooldown = 0.0f;
 }
