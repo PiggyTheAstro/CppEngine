@@ -13,10 +13,10 @@ public:
 	void AddListener(std::function<void()> enterFunc, std::function<void()> exitFunc);
 	void OnCollisionEnter(Transform* other);
 	void OnCollisionExit(Transform* other);
-	SDL_Rect GetRect();
+	SDL_FRect GetRect();
 
 private:
-	SDL_Rect rect;
+	SDL_FRect rect;
 	std::vector<std::function<void()>> enterListeners;
 	std::vector<std::function<void()>> exitListeners;
 	std::vector<int> collided;

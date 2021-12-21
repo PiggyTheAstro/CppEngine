@@ -24,7 +24,7 @@ void CollisionSystem::CheckCollisions()
 	}
 }
 
-bool CollisionSystem::isColliding(SDL_Rect first, SDL_Rect second)
+bool CollisionSystem::isColliding(SDL_FRect first, SDL_FRect second)
 {
 	return Physics::OverlapRects(first, second);
 }

@@ -4,7 +4,7 @@
 class Sprite
 {
 public:
-	SDL_Rect rect;
+	SDL_FRect rect;
 	SDL_Texture* texture;
 	float rotation;
 };

@@ -4,7 +4,7 @@
 
 RenderSystem::RenderSystem()
 {
-	rects = std::vector<SDL_Rect*>();
+	rects = std::vector<SDL_FRect*>();
 	sprites = std::vector<Sprite*>();
 	renderer = SDL_CreateRenderer(SDL_GetWindowFromID(1), 0, SDL_RENDERER_PRESENTVSYNC); // SDL Window IDs start at 1
 	cam = ServiceHandler::instance->GetModule<Camera>();
@@ -20,7 +20,7 @@ void RenderSystem::Render()
 	SDL_RenderPresent(renderer);
 }
 
-void RenderSystem::AddRenderable(SDL_Rect* rect)
+void RenderSystem::AddRenderable(SDL_FRect* rect)
 {
 	rects.push_back(rect);
 }
@@ -45,10 +45,10 @@ void RenderSystem::RenderRects()
 {
 	for (int i = 0; i < rects.size(); i++)
 	{
-		SDL_Rect renderedRect = *rects[i];
+		SDL_FRect renderedRect = *rects[i];
 		renderedRect.x -= cam->position.x;
 		renderedRect.y -= cam->position.y;
-		SDL_RenderFillRect(renderer, &renderedRect);
+		SDL_RenderFillRectF(renderer, &renderedRect);
 	}
 }
 
@@ -56,9 +56,9 @@ void RenderSystem::RenderSprites()
 {
 	for (int i = 0; i < sprites.size(); i++)
 	{
-		SDL_Rect renderedRect = sprites[i]->rect;
+		SDL_FRect renderedRect = sprites[i]->rect;
 		renderedRect.x -= cam->position.x;
 		renderedRect.y -= cam->position.y;
-		SDL_RenderCopyEx(renderer, sprites[i]->texture, 0, &renderedRect, sprites[i]->rotation, 0, SDL_FLIP_NONE);
+		SDL_RenderCopyExF(renderer, sprites[i]->texture, 0, &renderedRect, sprites[i]->rotation, 0, SDL_FLIP_NONE);
 	}
 }

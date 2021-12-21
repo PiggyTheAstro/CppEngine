@@ -11,6 +11,6 @@ public:
 
 private:
 	Transform* transform = nullptr;
-	SDL_Rect rect = SDL_Rect();
+	SDL_FRect rect = SDL_FRect();
 	RenderSystem* renderModule = nullptr;
 };

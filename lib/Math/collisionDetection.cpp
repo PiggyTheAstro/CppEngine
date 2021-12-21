@@ -1,6 +1,6 @@
 #include <Math/collisionDetection.h>
 
-bool Physics::OverlapRects(SDL_Rect first, SDL_Rect second)
+bool Physics::OverlapRects(SDL_FRect first, SDL_FRect second)
 {
 	if (first.x + first.w > second.x && first.x < second.x + second.w)
 	{

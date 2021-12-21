@@ -4,7 +4,7 @@
 void RectRenderer::Start(Transform* parent)
 {
 	transform = parent;
-	rect = SDL_Rect();
+	rect = SDL_FRect();
 	renderModule = ServiceHandler::instance->GetModule<RenderSystem>();
 	renderModule->AddRenderable(&rect);
 }

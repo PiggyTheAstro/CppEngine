@@ -8,7 +8,7 @@ class CollisionSystem : public SubSystem
 {
 public:
 	void CheckCollisions();
-	bool isColliding(SDL_Rect first, SDL_Rect second);
+	bool isColliding(SDL_FRect first, SDL_FRect second);
 	void AddCollider(RectCollider* collider);
 private:
 	std::vector<RectCollider*> colliders;

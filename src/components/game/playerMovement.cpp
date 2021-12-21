@@ -2,7 +2,6 @@
 #include <core/serviceHandler.h>
 #include <systems/entitySystem.h>
 #include <cmath>
-#include <iostream>
 
 void PlayerMovement::Start(Transform* parent)
 {
@@ -17,7 +16,7 @@ void PlayerMovement::Update()
 {
 	float thrustInput = inputManager->GetKey(SDLK_w) - inputManager->GetKey(SDLK_s);
 	rb->AddForce(transform->Up() * thrustInput * speed * clock->GetDeltaTime());
-	cam->position = (transform->position - Vectors::Vector2(275.0f - 16.0f, 375.0f + 16.0f)).Round();
+	cam->position = transform->position - Vectors::Vector2(275.0f - 16.0f, 375.0f + 16.0f);
 	int rotInput = inputManager->GetKey(SDLK_d) - inputManager->GetKey(SDLK_a);
 	transform->rotation += rotInput * speed * clock->GetDeltaTime();
 }

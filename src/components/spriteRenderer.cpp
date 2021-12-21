@@ -9,7 +9,7 @@ void SpriteRenderer::Start(Transform* parent)
 	renderModule = ServiceHandler::instance->GetModule<RenderSystem>();
 	assetModule = ServiceHandler::instance->GetModule<AssetManager>();
 	sprite = new Sprite();
-	sprite->rect = SDL_Rect();
+	sprite->rect = SDL_FRect();
 	sprite->rotation = transform->rotation;
 	renderModule->AddRenderable(sprite);
 }

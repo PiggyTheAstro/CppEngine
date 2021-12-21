@@ -4,6 +4,6 @@
 
 namespace Physics
 {
-	bool OverlapRects(SDL_Rect first, SDL_Rect second);
+	bool OverlapRects(SDL_FRect first, SDL_FRect second);
 	bool OverlapSphere(Vectors::Vector2 firstCenter, Vectors::Vector2 secondCenter, float firstRadius, float secondRadius);
 }

@@ -9,7 +9,7 @@ class RenderSystem : public SubSystem // TODO: Add sprite rendering support
 public:
 	RenderSystem();
 	void Render();
-	void AddRenderable(SDL_Rect* rect);
+	void AddRenderable(SDL_FRect* rect);
 	void AddRenderable(Sprite* sprite);
 	void RemoveRenderable(Sprite* sprite);
 private:
@@ -17,7 +17,7 @@ private:
 	void RenderSprites();
 	Camera* cam;
 	SDL_Renderer* renderer;
-	std::vector<SDL_Rect*> rects;
+	std::vector<SDL_FRect*> rects;
 	std::vector<Sprite*> sprites;
 
 };
