@@ -1,11 +1,11 @@
 #include <components/game/bulletMovement.h>
 #include <core/serviceHandler.h>
 #include <systems/entitySystem.h>
-#include <iostream>
 
 void BulletMovement::Start(Transform* parent)
 {
 	transform = parent;
+	transform->tag = "PlayerBullet";
 	clock = ServiceHandler::instance->GetModule<Clock>();
 	maxLifeSpan = 3.0f;
 	lifeTime = 0.0f;

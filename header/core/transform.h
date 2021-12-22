@@ -1,5 +1,6 @@
 #pragma once
 #include <Math/vectors.h>
+#include <string>
 
 class Transform
 {
@@ -9,7 +10,7 @@ public:
 	Vectors::Vector2 Down();
 	Vectors::Vector2 Left();
 	Vectors::Vector2 Right();
-
+	std::string tag;
 	unsigned int ID;
 	Vectors::Vector2 position;
 	float rotation;

@@ -164,6 +164,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="lib\Math\collisionDetection.cpp" />
+    <ClCompile Include="lib\Math\random.cpp" />
     <ClCompile Include="lib\Math\vectors.cpp" />
     <ClCompile Include="src\components\game\bulletMovement.cpp" />
     <ClCompile Include="src\components\game\playerMovement.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="src\core\component.cpp" />
     <ClCompile Include="src\core\entity.cpp" />
     <ClCompile Include="src\core\renderable.cpp" />
+    <ClCompile Include="src\core\timer.cpp" />
     <ClCompile Include="src\core\transform.cpp" />
     <ClCompile Include="src\systems\assetManager.cpp" />
     <ClCompile Include="src\systems\clock.cpp" />
@@ -199,6 +201,7 @@
     <ClInclude Include="header\components\spriteRenderer.h" />
     <ClInclude Include="header\core\renderable.h" />
     <ClInclude Include="header\core\sprite.h" />
+    <ClInclude Include="header\core\timer.h" />
     <ClInclude Include="header\core\transform.h" />
     <ClInclude Include="header\core\component.h" />
     <ClInclude Include="header\core\entity.h" />
@@ -217,6 +220,7 @@
     <ClInclude Include="header\core\serviceHandler.h" />
     <ClInclude Include="header\core\subsystem.h" />
     <ClInclude Include="lib\Math\collisionDetection.h" />
+    <ClInclude Include="lib\Math\random.h" />
     <ClInclude Include="lib\Math\vectors.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

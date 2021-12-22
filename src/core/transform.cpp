@@ -6,6 +6,7 @@ Transform::Transform(unsigned int identifier)
 	rotation = 0.0f;
 	scale = Vectors::Vector2(1.0f, 1.0f);
 	ID = identifier;
+	tag = "Entity";
 }
 
 Vectors::Vector2 Transform::Up()

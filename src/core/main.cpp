@@ -21,7 +21,7 @@ int main(int argc, char** argv)
 	player->AddComponent<PlayerShooting>();
 	player->transform.position = Vector2(275.0f, 375.0f);
 	player->transform.scale = Vector2(32.0f, 32.0f);
-	Entity* playerT = entitySystem->CreateEntity();
+	Entity* playerT = ServiceHandler::instance->GetModule<EntitySystem>()->CreateEntity();
 	playerT->AddComponent<RectRenderer>();
 	playerT->AddComponent<Rigidbody>();
 	playerT->AddComponent<RectCollider>();

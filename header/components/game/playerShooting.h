@@ -10,6 +10,8 @@ public:
 	void Start(Transform* parent) override;
 	void Update() override;
 	void Shoot();
+	void ResetFire();
+
 private:
 	Clock* clock = nullptr;
 	InputHandler* input = nullptr;
@@ -17,5 +19,4 @@ private:
 	Transform* transform = nullptr;
 	float fireRate = 1.0f;
 	bool canShoot = true;
-	float cooldown = 0.0f;
 };

@@ -1,8 +1,8 @@
 #include <components/game/playerShooting.h>
 #include <core/serviceHandler.h>
-#include <iostream>
 #include <components/rectRenderer.h>
 #include <components/game/bulletMovement.h>
+#include <functional>
 
 void PlayerShooting::Start(Transform* parent)
 {
@@ -16,14 +16,6 @@ void PlayerShooting::Update()
 {
 	if (!canShoot)
 	{
-		if (cooldown < fireRate) 
-		{
-			cooldown += clock->GetDeltaTime();
-		}
-		else 
-		{
-			canShoot = true;
-		}
 		return;
 	}
 	else if(input->GetKey(SDLK_SPACE))
@@ -42,5 +34,10 @@ void PlayerShooting::Shoot()
 	bullet->AddComponent<BulletMovement>();
 	bullet->GetComponent<BulletMovement>()->speed += entSys->GetEntity(transform->ID)->GetComponent<Rigidbody>()->velocity.Magnitude() / 0.02f;;
 	canShoot = false;
-	cooldown = 0.0f;
+	clock->StartTimer(std::bind(&PlayerShooting::ResetFire, this), fireRate);
+}
+
+void PlayerShooting::ResetFire()
+{
+	canShoot = true;
 }

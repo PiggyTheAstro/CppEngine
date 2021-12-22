@@ -6,6 +6,7 @@
 void PlayerMovement::Start(Transform* parent)
 {
 	transform = parent;
+	transform->tag = "Player";
 	clock = ServiceHandler::instance->GetModule<Clock>();
 	inputManager = ServiceHandler::instance->GetModule<InputHandler>();
 	rb = ServiceHandler::instance->GetModule<EntitySystem>()->GetEntity(transform->ID)->GetComponent<Rigidbody>();
