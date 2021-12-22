@@ -6,6 +6,7 @@
 #include <components/spriteRenderer.h>
 #include <components/game/playerShooting.h>
 #include <components/rectCollider.h>
+#include <components/game/asteroidSpawner.h>
 using namespace Vectors;
 
 int main(int argc, char** argv)
@@ -25,6 +26,7 @@ int main(int argc, char** argv)
 	playerT->AddComponent<RectRenderer>();
 	playerT->AddComponent<Rigidbody>();
 	playerT->AddComponent<RectCollider>();
+	playerT->AddComponent<AsteroidSpawner>();
 	playerT->transform.position = Vector2(200.0f, 300.0f);
 	playerT->transform.scale = Vector2(20.0f, 20.0f);
 	while (ServiceHandler::instance->isRunning)
