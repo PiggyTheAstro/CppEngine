@@ -10,6 +10,7 @@ public:
 
 private:
 	Transform* transform = nullptr;
+	Transform* player = nullptr;
 	Clock* clock = nullptr;
 	void Spawn();
 };

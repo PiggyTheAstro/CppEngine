@@ -11,7 +11,7 @@ public:
 	void AddForce(Vectors::Vector2 vector);
 	Vectors::Vector2 velocity;
 private:
-	Clock* clock;
+	Clock* clock = nullptr;
 	float mass = 100.0f;
 	float maxSpeed = 7.0f;
 	float friction = 0.25f;
