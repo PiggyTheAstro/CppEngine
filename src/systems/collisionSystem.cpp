@@ -33,3 +33,14 @@ void CollisionSystem::AddCollider(RectCollider* collider)
 {
 	colliders.push_back(collider);
 }
+
+void CollisionSystem::RemoveCollider(RectCollider* collider)
+{
+	for (int i = 0; i < colliders.size(); i++)
+	{
+		if (colliders[i] == collider)
+		{
+			colliders.erase(colliders.begin() + i);
+		}
+	}
+}

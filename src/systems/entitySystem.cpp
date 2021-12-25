@@ -29,6 +29,10 @@ std::vector<Entity*>* EntitySystem::GetAllEntities()
 
 void EntitySystem::UpdateEntities()
 {
+	if (entityList.size() > 100)
+	{
+		std::cout << entityList.size() << std::endl;
+	}
 	for (int i = 0; i < entityList.size(); i++)
 	{
 		entityList[i]->Update();

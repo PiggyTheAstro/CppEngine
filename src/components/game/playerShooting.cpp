@@ -26,6 +26,7 @@ void PlayerShooting::Update()
 
 void PlayerShooting::Shoot()
 {
+	canShoot = false;
 	Entity* bullet = entSys->CreateEntity();
 	bullet->transform.position = transform->position + (transform->scale / 3.0f);
 	bullet->transform.rotation = transform->rotation;
@@ -33,7 +34,6 @@ void PlayerShooting::Shoot()
 	bullet->AddComponent<RectRenderer>();
 	bullet->AddComponent<BulletMovement>();
 	bullet->GetComponent<BulletMovement>()->speed += entSys->GetEntity(transform->ID)->GetComponent<Rigidbody>()->velocity.Magnitude() / 0.02f;;
-	canShoot = false;
 	clock->StartTimer(std::bind(&PlayerShooting::ResetFire, this), fireRate);
 }
 

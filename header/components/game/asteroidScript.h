@@ -1,19 +1,20 @@
 #pragma once
 #include <core/component.h>
 #include <systems/clock.h>
-#include <systems/entitySystem.h>
+#include <components/rectCollider.h>
 
-class AsteroidSpawner : public Component
+class AsteroidScript : public Component
 {
 public:
 	void Start(Transform* parent) override;
 	void Update() override;
+	void SetPlayer(Transform* playerTransform);
+	void OnCollisionEnter();
 
 private:
 	Transform* transform = nullptr;
-	EntitySystem* entSys = nullptr;
 	Transform* player = nullptr;
 	Clock* clock = nullptr;
-	void Spawn();
-	void CreateAsteroid();
+	RectCollider* collider = nullptr;
+	float speed;
 };

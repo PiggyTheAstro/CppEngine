@@ -93,6 +93,9 @@
     <ClCompile Include="src\components\game\asteroidSpawner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\components\game\asteroidScript.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\core\game.h">
@@ -174,6 +177,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="header\components\game\asteroidSpawner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\components\game\asteroidScript.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

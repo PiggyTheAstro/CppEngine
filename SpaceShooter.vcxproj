@@ -166,6 +166,7 @@
     <ClCompile Include="lib\Math\collisionDetection.cpp" />
     <ClCompile Include="lib\Math\random.cpp" />
     <ClCompile Include="lib\Math\vectors.cpp" />
+    <ClCompile Include="src\components\game\asteroidScript.cpp" />
     <ClCompile Include="src\components\game\asteroidSpawner.cpp" />
     <ClCompile Include="src\components\game\bulletMovement.cpp" />
     <ClCompile Include="src\components\game\playerMovement.cpp" />
@@ -191,6 +192,10 @@
     <ClCompile Include="src\core\subsystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="header\components\game\asteroidScript.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="header\components\game\asteroidSpawner.h" />
     <ClInclude Include="header\components\game\bulletMovement.h" />
     <ClInclude Include="header\components\game\playerMovement.h" />

@@ -39,6 +39,7 @@ void RectCollider::OnCollisionEnter(Transform* other)
 		}
 	}
 	collided.push_back(other->ID);
+	col = other;
 	for (std::function<void()> func : enterListeners)
 	{
 		func();
@@ -58,6 +59,11 @@ void RectCollider::OnCollisionExit(Transform* other)
 			}
 		}
 	}
+}
+
+RectCollider::~RectCollider()
+{
+	ServiceHandler::instance->GetModule<CollisionSystem>()->RemoveCollider(this);
 }
 
 SDL_FRect RectCollider::GetRect()

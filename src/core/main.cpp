@@ -23,9 +23,6 @@ int main(int argc, char** argv)
 	player->transform.position = Vector2(275.0f, 375.0f);
 	player->transform.scale = Vector2(32.0f, 32.0f);
 	Entity* playerT = ServiceHandler::instance->GetModule<EntitySystem>()->CreateEntity();
-	playerT->AddComponent<RectRenderer>();
-	playerT->AddComponent<Rigidbody>();
-	playerT->AddComponent<RectCollider>();
 	playerT->AddComponent<AsteroidSpawner>();
 	playerT->transform.position = Vector2(200.0f, 300.0f);
 	playerT->transform.scale = Vector2(20.0f, 20.0f);

@@ -10,6 +10,7 @@ public:
 	void CheckCollisions();
 	bool isColliding(SDL_FRect first, SDL_FRect second);
 	void AddCollider(RectCollider* collider);
+	void RemoveCollider(RectCollider* collider);
 private:
 	std::vector<RectCollider*> colliders;
 };
