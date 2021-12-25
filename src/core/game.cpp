@@ -3,7 +3,7 @@
 
 Game::Game()
 {
-	window = SDL_CreateWindow("Shmup", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 550, 750, SDL_WINDOW_SHOWN); // TODO: Make game fullscreen?
+	window = SDL_CreateWindow("Shmup", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 550, 750, SDL_WINDOW_MAXIMIZED); // TODO: Make game fullscreen?
 	serviceManager = new ServiceHandler();
 	inputManager = serviceManager->AddModule<InputHandler>();
 	entityManager = serviceManager->AddModule<EntitySystem>();

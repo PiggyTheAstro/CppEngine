@@ -46,8 +46,8 @@ void RenderSystem::RenderRects()
 	for (int i = 0; i < rects.size(); i++)
 	{
 		SDL_FRect renderedRect = *rects[i];
-		renderedRect.x -= cam->position.x;
-		renderedRect.y -= cam->position.y;
+		renderedRect.x -= cam->offset.x;
+		renderedRect.y -= cam->offset.y;
 		SDL_RenderFillRectF(renderer, &renderedRect);
 	}
 }
@@ -57,8 +57,8 @@ void RenderSystem::RenderSprites()
 	for (int i = 0; i < sprites.size(); i++)
 	{
 		SDL_FRect renderedRect = sprites[i]->rect;
-		renderedRect.x -= cam->position.x;
-		renderedRect.y -= cam->position.y;
+		renderedRect.x -= cam->offset.x;
+		renderedRect.y -= cam->offset.y;
 		SDL_RenderCopyExF(renderer, sprites[i]->texture, 0, &renderedRect, sprites[i]->rotation, 0, SDL_FLIP_NONE);
 	}
 }

@@ -13,6 +13,8 @@ int main(int argc, char** argv)
 {
 	Game game = Game();
 	EntitySystem* entitySystem = ServiceHandler::instance->GetModule<EntitySystem>();
+	SDL_DisplayMode display;
+	SDL_GetCurrentDisplayMode(0, &display);
 	Entity* player = entitySystem->CreateEntity();
 	player->AddComponent<SpriteRenderer>();
 	player->GetComponent<SpriteRenderer>()->SetSprite("resources/ship.bmp");
@@ -20,7 +22,7 @@ int main(int argc, char** argv)
 	player->AddComponent<RectCollider>();
 	player->AddComponent<PlayerMovement>();
 	player->AddComponent<PlayerShooting>();
-	player->transform.position = Vector2(275.0f, 375.0f);
+	player->transform.position = Vector2(display.w / 2, display.h / 2);
 	player->transform.scale = Vector2(32.0f, 32.0f);
 	Entity* playerT = ServiceHandler::instance->GetModule<EntitySystem>()->CreateEntity();
 	playerT->AddComponent<AsteroidSpawner>();

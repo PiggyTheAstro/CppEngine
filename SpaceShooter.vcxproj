@@ -180,6 +180,7 @@
     <ClCompile Include="src\core\timer.cpp" />
     <ClCompile Include="src\core\transform.cpp" />
     <ClCompile Include="src\systems\assetManager.cpp" />
+    <ClCompile Include="src\systems\camera.cpp" />
     <ClCompile Include="src\systems\clock.cpp" />
     <ClCompile Include="src\systems\collisionSystem.cpp" />
     <ClCompile Include="src\systems\entitySystem.cpp" />

@@ -12,7 +12,7 @@ void AsteroidSpawner::Start(Transform* parent)
 	entSys = ServiceHandler::instance->GetModule<EntitySystem>();
 	player = &(entSys->GetEntity(1)->transform); // The player's ID will always be 1.
 	clock = ServiceHandler::instance->GetModule<Clock>();
-	clock->StartTimer(std::bind(&AsteroidSpawner::Spawn, this), Random::Rand(0.5f, 3.0f));
+	clock->StartTimer(std::bind(&AsteroidSpawner::Spawn, this), Random::Rand(0.3f, 1.0f));
 }
 
 void AsteroidSpawner::Update()
@@ -24,8 +24,8 @@ void AsteroidSpawner::Spawn()
 {
 	int xDir = Random::Randint(0, 1) % 2 * 2 - 1; // Generates either -1 or 1
 	int yDir = Random::Randint(0, 1) % 2 * 2 - 1;
-	transform->position.x = player->position.x + (Random::Randint(1000, 1500) * xDir);
-	transform->position.y = player->position.y + (Random::Randint(1000, 1500) * yDir);
+	transform->position.x = player->position.x + (Random::Randint(900, 1200) * xDir);
+	transform->position.y = player->position.y + (Random::Randint(900, 1200) * yDir);
 	CreateAsteroid();
 	clock->StartTimer(std::bind(&AsteroidSpawner::Spawn, this), Random::Rand(0.5f, 1.5f));
 }

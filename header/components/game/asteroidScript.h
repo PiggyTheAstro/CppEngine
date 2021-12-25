@@ -12,6 +12,7 @@ public:
 	void OnCollisionEnter();
 
 private:
+	float health;
 	Transform* transform = nullptr;
 	Transform* player = nullptr;
 	Clock* clock = nullptr;

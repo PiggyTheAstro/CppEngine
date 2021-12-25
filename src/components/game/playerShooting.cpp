@@ -2,6 +2,7 @@
 #include <core/serviceHandler.h>
 #include <components/rectRenderer.h>
 #include <components/game/bulletMovement.h>
+#include <components/rectCollider.h>
 #include <functional>
 
 void PlayerShooting::Start(Transform* parent)
@@ -32,6 +33,7 @@ void PlayerShooting::Shoot()
 	bullet->transform.rotation = transform->rotation;
 	bullet->transform.scale = Vectors::Vector2(8.0f, 8.0f);
 	bullet->AddComponent<RectRenderer>();
+	bullet->AddComponent<RectCollider>();
 	bullet->AddComponent<BulletMovement>();
 	bullet->GetComponent<BulletMovement>()->speed += entSys->GetEntity(transform->ID)->GetComponent<Rigidbody>()->velocity.Magnitude() / 0.02f;;
 	clock->StartTimer(std::bind(&PlayerShooting::ResetFire, this), fireRate);
