@@ -1,8 +1,8 @@
 #include <components/game/asteroidScript.h>
 #include <Math/random.h>
 #include <core/serviceHandler.h>
-#include <systems/entitySystem.h>
 #include <functional>
+#include <components/game/playerShooting.h>
 
 void AsteroidScript::Start(Transform* parent)
 {
@@ -13,7 +13,8 @@ void AsteroidScript::Start(Transform* parent)
 	speed = Random::Rand(50.0f, 70.0f);
 	health = Random::Randint(1, 4);
 	clock = ServiceHandler::instance->GetModule<Clock>();
-	collider = ServiceHandler::instance->GetModule<EntitySystem>()->GetEntity(transform->ID)->GetComponent<RectCollider>();
+	entSys = ServiceHandler::instance->GetModule<EntitySystem>();
+	collider = entSys->GetEntity(transform->ID)->GetComponent<RectCollider>();
 	collider->AddListener(std::bind(&AsteroidScript::OnCollisionEnter, this), nullptr);
 }
 
@@ -33,14 +34,23 @@ void AsteroidScript::SetPlayer(Transform* playerTransform)
 
 void AsteroidScript::OnCollisionEnter()
 {
+	if (collider->col->tag == "Player")
+	{
+		ServiceHandler::instance->isRunning = false;
+	}
+
 	if (collider->col->tag == "PlayerBullet") 
 	{
 		health -= 1;
-		ServiceHandler::instance->GetModule<EntitySystem>()->DestroyEntity(collider->col->ID);
+		entSys->DestroyEntity(collider->col->ID);
 	}
 	if(health <= 0)
 	{
-		ServiceHandler::instance->GetModule<EntitySystem>()->DestroyEntity(transform->ID);
+		if (entSys->GetEntity(player->ID)->GetComponent<PlayerShooting>()->fireRate > 0.1f)
+		{
+			entSys->GetEntity(player->ID)->GetComponent<PlayerShooting>()->fireRate -= 0.05f;
+		}
+		entSys->DestroyEntity(transform->ID);
 	}
 }
 

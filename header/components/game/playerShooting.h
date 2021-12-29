@@ -11,12 +11,12 @@ public:
 	void Update() override;
 	void Shoot();
 	void ResetFire();
+	float fireRate = 1.0f;
 
 private:
 	Clock* clock = nullptr;
 	InputHandler* input = nullptr;
 	EntitySystem* entSys = nullptr;
 	Transform* transform = nullptr;
-	float fireRate = 1.0f;
 	bool canShoot = true;
 };

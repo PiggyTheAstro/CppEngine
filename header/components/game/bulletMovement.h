@@ -8,7 +8,7 @@ class BulletMovement : public Component
 public:
 	void Start(Transform* parent) override;
 	void Update() override;
-	float speed = 400.0f;
+	float speed = 500.0f;
 
 private:
 	Transform* transform = nullptr;

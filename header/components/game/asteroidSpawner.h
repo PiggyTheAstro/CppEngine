@@ -16,4 +16,5 @@ private:
 	Clock* clock = nullptr;
 	void Spawn();
 	void CreateAsteroid();
+	float difficulty = 0.0f;
 };

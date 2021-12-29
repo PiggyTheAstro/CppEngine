@@ -171,6 +171,8 @@
     <ClCompile Include="src\components\game\bulletMovement.cpp" />
     <ClCompile Include="src\components\game\playerMovement.cpp" />
     <ClCompile Include="src\components\game\playerShooting.cpp" />
+    <ClCompile Include="src\components\game\seekerScript.cpp" />
+    <ClCompile Include="src\components\game\seekerSpawn.cpp" />
     <ClCompile Include="src\components\rectCollider.cpp" />
     <ClCompile Include="src\components\rigidbody.cpp" />
     <ClCompile Include="src\components\spriteRenderer.cpp" />
@@ -204,6 +206,8 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="header\components\game\seekerScript.h" />
+    <ClInclude Include="header\components\game\seekerSpawn.h" />
     <ClInclude Include="header\components\rectCollider.h" />
     <ClInclude Include="header\components\rigidbody.h" />
     <ClInclude Include="header\components\spriteRenderer.h" />

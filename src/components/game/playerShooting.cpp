@@ -31,7 +31,7 @@ void PlayerShooting::Shoot()
 	Entity* bullet = entSys->CreateEntity();
 	bullet->transform.position = transform->position + (transform->scale / 3.0f);
 	bullet->transform.rotation = transform->rotation;
-	bullet->transform.scale = Vectors::Vector2(8.0f, 8.0f);
+	bullet->transform.scale = Vectors::Vector2(12.0f, 12.0f);
 	bullet->AddComponent<RectRenderer>();
 	bullet->AddComponent<RectCollider>();
 	bullet->AddComponent<BulletMovement>();

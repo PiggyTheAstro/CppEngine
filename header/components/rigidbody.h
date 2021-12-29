@@ -10,10 +10,10 @@ public:
 	void Update() override;
 	void AddForce(Vectors::Vector2 vector);
 	Vectors::Vector2 velocity;
-	float friction = 0.25f;
+	float friction = 0.3f;
 private:
 	Clock* clock = nullptr;
 	float mass = 100.0f;
-	float maxSpeed = 7.0f;
+	float maxSpeed = 7.5f;
 	Transform* transform = nullptr;
 };

@@ -27,7 +27,7 @@ void AsteroidSpawner::Spawn()
 	transform->position.x = player->position.x + (Random::Randint(900, 1200) * xDir);
 	transform->position.y = player->position.y + (Random::Randint(900, 1200) * yDir);
 	CreateAsteroid();
-	clock->StartTimer(std::bind(&AsteroidSpawner::Spawn, this), Random::Rand(0.5f, 1.5f));
+	clock->StartTimer(std::bind(&AsteroidSpawner::Spawn, this), Random::Rand(0.5f, 1.5f) - difficulty);
 }
 
 void AsteroidSpawner::CreateAsteroid()
@@ -39,4 +39,10 @@ void AsteroidSpawner::CreateAsteroid()
 	asteroid->AddComponent<RectCollider>();
 	asteroid->AddComponent<AsteroidScript>();
 	asteroid->GetComponent<AsteroidScript>()->SetPlayer(player);
+	asteroid->GetComponent<AsteroidScript>()->health += (difficulty * 5.0f);
+	asteroid->GetComponent<AsteroidScript>()->speed += (difficulty * 3.0f);
+	if (difficulty < 0.4f)
+	{
+		difficulty += Random::Rand(0.01f, 0.02f);
+	}
 }

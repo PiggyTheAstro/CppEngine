@@ -19,5 +19,5 @@ void PlayerMovement::Update()
 	rb->AddForce(transform->Up() * thrustInput * speed * clock->GetDeltaTime());
 	cam->MoveTo(transform->position + 16.0f); // 16.0f is half the scale (used to get centered position)
 	int rotInput = inputManager->GetKey(SDLK_d) - inputManager->GetKey(SDLK_a);
-	transform->rotation += rotInput * speed * clock->GetDeltaTime();
+	transform->rotation += rotInput * 250.0f * clock->GetDeltaTime();
 }
