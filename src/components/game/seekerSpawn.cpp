@@ -37,11 +37,11 @@ void SeekerSpawner::CreateSeeker()
 	seeker->transform.position = transform->position;
 	seeker->AddComponent<RectCollider>();
 	seeker->AddComponent<SpriteRenderer>();
-	seeker->GetComponent<SpriteRenderer>()->SetSprite("resources/ship.bmp");
+	seeker->GetComponent<SpriteRenderer>()->SetSprite("resources/enemyship.bmp");
 	seeker->AddComponent<Rigidbody>();
 	seeker->AddComponent<SeekerScript>();
 	seeker->GetComponent<SeekerScript>()->SetPlayer(player);
-	seeker->GetComponent<SeekerScript>()->health += difficulty;
+	seeker->GetComponent<SeekerScript>()->health += (difficulty * 2.0f);
 	seeker->GetComponent<SeekerScript>()->speed += (difficulty * 2.0f);
 	if (difficulty < 15.5f)
 	{

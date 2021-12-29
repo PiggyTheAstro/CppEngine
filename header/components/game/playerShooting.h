@@ -11,7 +11,7 @@ public:
 	void Update() override;
 	void Shoot();
 	void ResetFire();
-	float fireRate = 1.0f;
+	float fireRate = 0.8f;
 
 private:
 	Clock* clock = nullptr;
