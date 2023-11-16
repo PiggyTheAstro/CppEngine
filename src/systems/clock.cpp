@@ -6,6 +6,11 @@ Clock::Clock()
 	deltaTime = 0;
 }
 
+void Clock::Update()
+{
+	Tick();
+}
+
 void Clock::Tick()
 {
 	unsigned int currentTime = SDL_GetTicks();

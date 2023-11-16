@@ -7,6 +7,7 @@
 class CollisionSystem : public SubSystem
 {
 public:
+	void Update() override;
 	void CheckCollisions();
 	void CleanDead();
 	bool isColliding(SDL_FRect first, SDL_FRect second);

@@ -5,6 +5,7 @@
 class EntitySystem : public SubSystem
 {
 public:
+	void Update() override;
 	Entity* CreateEntity();
 	Entity* GetEntity(unsigned int ID);
 	std::vector<Entity*>* GetAllEntities();

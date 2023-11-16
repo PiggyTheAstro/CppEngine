@@ -4,6 +4,7 @@
 class InputHandler : public SubSystem
 {
 public:
+	void Update() override;
 	void CheckEvent();
 	void PushEvent(int eventValue);
 	void PopEvent(int eventValue);

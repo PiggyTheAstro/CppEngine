@@ -2,6 +2,11 @@
 #include <Math/collisionDetection.h>
 #include <iostream>
 
+void CollisionSystem::Update()
+{
+	CheckCollisions();
+}
+
 void CollisionSystem::CheckCollisions()
 {
 	for (int i = 0; i < colliders.size(); i++)

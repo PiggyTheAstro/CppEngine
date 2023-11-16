@@ -8,6 +8,7 @@ class Clock : public SubSystem
 {
 public:
 	Clock();
+	void Update() override;
 	void Tick();
 	float GetDeltaTime();
 	void StartTimer(std::function<void()> func, float time); // TODO: Allow this to take in a raw function pointer or lambda

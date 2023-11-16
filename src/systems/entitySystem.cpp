@@ -2,6 +2,12 @@
 #include <iostream>
 #include <algorithm>
 #include <ranges>
+
+void EntitySystem::Update()
+{
+	UpdateEntities();
+}
+
 Entity* EntitySystem::CreateEntity()
 {
 	Entity* ent = new Entity; // Handled

@@ -18,12 +18,6 @@ public:
 	ServiceHandler* serviceManager;
 
 private:
+	std::vector<SubSystem*> subSystems;
 	SDL_Window* window;
-	InputHandler* inputManager; // TODO: There is no need to have a variable for each system, they can simply implement a shared interface
-	EntitySystem* entityManager;
-	RenderSystem* renderManager;
-	Clock* clock;
-	AssetManager* assetManager;
-	CollisionSystem* colDetection;
-	Camera* mainCam;
 };

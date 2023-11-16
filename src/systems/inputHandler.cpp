@@ -2,6 +2,11 @@
 #include <SDL.h>
 #include <core/serviceHandler.h>
 
+void InputHandler::Update()
+{
+	CheckEvent();
+}
+
 void InputHandler::CheckEvent()
 {
 	SDL_Event eventData = SDL_Event();

@@ -10,6 +10,11 @@ RenderSystem::RenderSystem()
 	cam = ServiceHandler::instance->GetModule<Camera>();
 }
 
+void RenderSystem::Update()
+{
+	Render();
+}
+
 void RenderSystem::Render()
 {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);

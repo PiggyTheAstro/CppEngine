@@ -5,31 +5,27 @@ Game::Game()
 {
 	window = SDL_CreateWindow("Shmup", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 550, 750, SDL_WINDOW_MAXIMIZED); // TODO: Make game fullscreen?
 	serviceManager = new ServiceHandler();
-	inputManager = serviceManager->AddModule<InputHandler>();
-	entityManager = serviceManager->AddModule<EntitySystem>();
-	mainCam = serviceManager->AddModule<Camera>();
-	renderManager = serviceManager->AddModule<RenderSystem>();
-	clock = serviceManager->AddModule<Clock>();
-	assetManager = serviceManager->AddModule<AssetManager>();
-	colDetection = serviceManager->AddModule<CollisionSystem>();
+	subSystems.push_back(serviceManager->AddModule<InputHandler>());
+	subSystems.push_back(serviceManager->AddModule<EntitySystem>());
+	subSystems.push_back(serviceManager->AddModule<Camera>());
+	subSystems.push_back(serviceManager->AddModule<RenderSystem>());
+	subSystems.push_back(serviceManager->AddModule<Clock>());
+	subSystems.push_back(serviceManager->AddModule<AssetManager>());
+	subSystems.push_back(serviceManager->AddModule<CollisionSystem>());
 }
 
-void Game::Update() // All these functions could be turned into an update interface for each subsystem
+void Game::Update()
 {
-	clock->Tick();
-	inputManager->CheckEvent();
-	colDetection->CheckCollisions();
-	entityManager->UpdateEntities();
-	renderManager->Render();
+	for (int i = 0; i < subSystems.size(); i++)
+	{
+		subSystems[i]->Update();
+	}
 }
 
-void Game::Cleanup() // Temporary
+void Game::Cleanup()
 {
-	delete inputManager;
-	delete entityManager;
-	delete renderManager;
-	delete clock;
-	delete assetManager;
-	delete colDetection;
-	delete mainCam;
+	for (int i = 0; i < subSystems.size(); i++)
+	{
+		delete subSystems[i];
+	}
 }
